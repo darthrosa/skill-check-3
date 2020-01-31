@@ -16,11 +16,17 @@ app.use(
     })
 )
 
+
+// AUTH ENDPOINTS
+app.post('/auth/login', ctrl.login);
+app.post('/auth/register', ctrl.register);
+app.post('/auth/logout', ctrl.logout);
+app.get('/auth/user', ctrl.getUser);
+
+
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     console.log('db connected')
     const port = SERVER_PORT;
     app.listen(port, () => console.log(`Server listening on port: ${port}`));
 })
-
-// ENDPOINTS
