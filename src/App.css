@@ -1,3 +1,42 @@
 .App {
+  background-color: #f2f2f2;
+  min-width: 100%;
+  min-height: 100vh;
   text-align: center;
 }
+
+input {
+  margin: 0px 6px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  font-weight: 500;
+  font-size: 14px;
+  padding: 9px 15px;
+  margin: 0px 6px;
+  border-radius: 2px;
+  background-color: #403d39;
+  border: 2px solid transparent;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-bar {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* button:hover {
+  color: #403d39;;
+  background-color: transparent;
+  border: 2px solid #403d39;;
+  transition: 0.2s ease-in-out;
+} */

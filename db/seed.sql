@@ -6,8 +6,8 @@ create table helo_users (
 
 create table blog_posts (
     id serial primary key,
-    user_id int references users(id),
-    title VARCHAR(150),
+    user_id int references helo_users(id),
+    title varchar(150),
     image text,
     content text
 );

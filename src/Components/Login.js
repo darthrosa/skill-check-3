@@ -8,9 +8,8 @@ class Login extends Component {
             username: '',
             password: ''
         }
-        this.register = this.register.bind(this);
         this.login = this.login.bind(this);
-        // this.logout = this.logout.bind(this);
+        this.register = this.register.bind(this);
     }
 
     handleChange = e => {
@@ -20,12 +19,14 @@ class Login extends Component {
 
     login = (username, password) => {
         axios.post('/auth/login', {username, password}).then(res => {
+            console.log(res)
             this.props.history.push('/dashboard')
         })
     };
 
     register = (username, password) => {
         axios.post('/auth/register', {username, password}).then(res => {
+            console.log(res)
             this.props.history.push('/dashboard')
         })
     };
@@ -34,16 +35,16 @@ class Login extends Component {
     render(){
         const {username, password} = this.state;
         return(
-            <div className='login-contianer'>Login
+            <div className='login-container'>Login
                 <div className='login-box'>
-                    <input
+                    <input className='login-input'
                     type='text'
                     name='username'
                     placeholder="Username"
                     value={username}
                     onChange={e => this.handleChange(e)}
                     />
-                    <input
+                    <input className='login-input'
                     type='password'
                     name='password'
                     placeholder="Password"
@@ -57,5 +58,6 @@ class Login extends Component {
         )
     }
 }
+
 
 export default Login;

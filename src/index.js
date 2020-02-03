@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import { HashRouter } from "react-router-dom";
+import store from "./reducks/store";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    // <Provider>
+    <Provider store={store}>
         <HashRouter>
             <App />
         </HashRouter>
-    // </Provider>
+    </Provider>
     ,document.getElementById('root')
 );
 
